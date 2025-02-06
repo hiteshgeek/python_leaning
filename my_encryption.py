@@ -7,8 +7,11 @@ def ceaser(text, shift, encode_or_decode):
         shift *= -1;
 
     for i in text:
-        target_index = (alphabets.index(i) + shift) % len(alphabets)
-        transformed_text += alphabets[target_index]
+        if i in alphabets:
+            target_index = (alphabets.index(i) + shift) % len(alphabets)
+            transformed_text += alphabets[target_index]
+        else:
+            transformed_text += i
 
     return transformed_text
 
