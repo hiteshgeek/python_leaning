@@ -7,14 +7,8 @@ while choice in ["encrypt", "decrypt"]:
     shift = int(shift)
 
     user_input = input("Enter text : \n")
-    if choice == "encrypt":       
-        encrypted_text = my_encryption.encrypt_text(user_input, shift)
-        print(f"Encrypted text : {encrypted_text}")
-    elif choice == "decrypt":  
-        decrypted_text = my_encryption.decrypt_text(user_input, shift)
-        print(f"Decrypted text : {decrypted_text}")
-    else:
-        break;
+    transformed = my_encryption.ceaser(user_input, shift, choice)
+    print(f"Transformed text : {transformed}")
 
     choice = input("Enter choice (encrypt, decrypt): \n")
 
